@@ -5,6 +5,8 @@ import java.util.Scanner;
 import com.discursive.example.student.Registrar;
 import com.discursive.example.student.Student;
 import com.discursive.example.student.StudentStore;
+import com.discursive.example.student.store.*;
+import com.discursive.example.student.register.LenientRegistrar;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -22,10 +24,16 @@ public class Main {
 		
 		System.out.printf( "You supplied Person ID %d searching...\n", personId );
 		
-		Injector injector = Guice.createInjector(new SimpleModule() );
+		//------- With Injection
+		Injector injector = Guice.createInjector(new SimpleModule());
 		StudentStore studentStore = injector.getInstance( StudentStore.class );
 		Registrar registrar = injector.getInstance( Registrar.class );
 
+		//------- Without Injection
+		/*DummyStudentStore studentStore = new DummyStudentStore();
+		LenientRegistrar registrar = new LenientRegistrar(studentStore);
+		*/
+		
 		Student s = new Student( personId, 12 );
 		studentStore.save( s );
 		
@@ -36,8 +44,7 @@ public class Main {
 							    "the registrar's criteria" );
 		} else {
 			System.out.println( "This student does not meet the registrar's criteria" );
-		}
-		
+		}		
 	}
 
 }
