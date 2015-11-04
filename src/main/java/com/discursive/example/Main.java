@@ -30,9 +30,9 @@ public class Main {
 		Registrar registrar = injector.getInstance( Registrar.class );
 
 		//------- Without Injection
-		/*DummyStudentStore studentStore = new DummyStudentStore();
-		LenientRegistrar registrar = new LenientRegistrar(studentStore);
-		*/
+		//StudentStore studentStore = new DummyStudentStore();
+		//Registrar registrar = new LenientRegistrar(studentStore);
+		
 		
 		Student s = new Student( personId, 12 );
 		studentStore.save( s );

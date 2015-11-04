@@ -11,17 +11,14 @@ import com.discursive.example.student.store.*;
 @Singleton
 public class LenientRegistrar implements Registrar {
 	
-	//------- with Injection 
 	private final StudentStore studentStore;
-	//------- Without Injection
-	//private final DummyStudentStore studentStore;
 	
 	@Inject
 	public LenientRegistrar(StudentStore studentStore) {
 		//------- Injection 
-		this.studentStore = studentStore;
+		//this.studentStore = studentStore;
 		//------- Without Injection
-		//this.studentStore = new DummyStudentStore();
+		this.studentStore = new DummyStudentStore();
 	}
 
 	public boolean checkStudentStatus(Integer studentId) {
