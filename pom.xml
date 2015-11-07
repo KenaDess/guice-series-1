@@ -1,16 +1,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>com.discursive.example</groupId>
 	<artifactId>guice-series-1</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
 	<name>Google Guice Example</name>
 	<description>A simple example using Google Guice.  This example accompanies the first in the Discursive Guice Series</description>
+	<url>http://maven.apache.org</url>
+	
+	<!-- Code a rajouter dans chaque projet maven pour tester -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>fr.inria.gforge.spoon</groupId>
+				<artifactId>spoon-maven-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<processors>
+						<processor>com.iagl.processor.CatchProcessor</processor>
+					</processors>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.iagl.processor</groupId>
+						<artifactId>Processors</artifactId>
+						<version>1.0-SNAPSHOT</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+	</build>
+	<!-- fin -->
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
 			<version>3.0-rc2</version>
-		</dependency>	
+		</dependency>
 	</dependencies>
 </project>
