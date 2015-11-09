@@ -28,7 +28,7 @@
 				</executions>
 				<configuration>
 					<processors>
-						<processor>com.iagl.processor.CatchProcessor</processor>
+						<processor>com.iagl.processor.BindMethodProcessor</processor>
 					</processors>
 				</configuration>
 				<dependencies>
