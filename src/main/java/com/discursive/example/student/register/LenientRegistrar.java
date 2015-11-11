@@ -13,14 +13,17 @@ public class LenientRegistrar implements Registrar {
 	
 	private final StudentStore studentStore;
 	
+	//------- Injection 
 	@Inject
 	public LenientRegistrar(StudentStore studentStore) {
-		//------- Injection 
-		//this.studentStore = studentStore;
-		//------- Without Injection
-		this.studentStore = new DummyStudentStore();
+		this.studentStore = studentStore;
 	}
 
+	//------- Without Injection
+//	public LenientRegistrar() {
+//    this.studentStore = new DummyStudentStore();
+//  }
+	
 	public boolean checkStudentStatus(Integer studentId) {
 		boolean status = false;
 		

@@ -29,7 +29,7 @@
 				<configuration>
 					<processors>
 						<processor>com.iagl.processor.ConstructorParametersProcessor</processor>
-						<processor>com.iagl.processor.BindMethodProcessor</processor>						
+						<processor>com.iagl.processor.BindMethodProcessor</processor>	
 						<processor>com.iagl.processor.ConstructorProcessor</processor>
 					</processors>
 				</configuration>

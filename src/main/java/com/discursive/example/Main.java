@@ -25,7 +25,7 @@ public class Main {
 		System.out.printf( "You supplied Person ID %d searching...\n", personId );
 		
 		//------- With Injection
-		Injector injector = Guice.createInjector(new SimpleModule());
+		Injector injector = Guice.createInjector(new SimpleModule());		
 		StudentStore studentStore = injector.getInstance( StudentStore.class );
 		Registrar registrar = injector.getInstance( Registrar.class );
 
