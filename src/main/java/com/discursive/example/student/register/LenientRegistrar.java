@@ -21,9 +21,8 @@ public class LenientRegistrar implements Registrar {
 
   // ------- Injection
   @Inject
-  public LenientRegistrar(StudentStore studentStore, String x) {
+  public LenientRegistrar(StudentStore studentStore) {
     this.studentStore = studentStore;
-    this.exempleRemplacement2 = x;
   }
 
   // ------- Without Injection
