@@ -13,7 +13,6 @@ public class LenientRegistrar implements Registrar {
 	
 	private final StudentStore studentStore;
 	
-	//------- Injection 
 	@Inject
 	public LenientRegistrar(StudentStore studentStore) {
 		this.studentStore = studentStore;
